@@ -1,0 +1,116 @@
+@@ -0,0 +1,287 @@
+/* ============================================
+   Field Notes — a quiet habit ledger
+   Design tokens
+   ============================================ */
+:root {
+  /* Color */
+  --paper: #f1ece0;
+  --paper-raised: #f8f4ea;
+  --ink: #232a26;
+  --moss-100: #dde4d2;
+  --moss-300: #aec79a;
+  --moss-500: #4f6f52;
+  --moss-700: #2f4730;
+  --clay: #c1654a;
+  --clay-soft: #e3b6a6;
+  --line: #d9d0bd;
+  --muted: #6f6856;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  /* Layout */
+  --radius: 6px;
+  --radius-lg: 10px;
+  --max-w: 760px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+/* ---------- Header ---------- */
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+
+.masthead h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.1rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+.masthead p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 38ch;
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper-raised);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.btn:hover { background: var(--moss-700); }
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover { background: var(--moss-100); border-color: var(--moss-300); }
+
+/* ---------- Stats strip ---------- */
+.stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.stats strong {
+  color: var(--moss-700);
+  font-size: 1rem;
+  margin-right: 5px;
+}
